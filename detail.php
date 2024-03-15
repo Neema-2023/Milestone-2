@@ -1,33 +1,33 @@
 <?php
 require 'db.php';
 
-$id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: User ID not found.');
+$id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: Employee ID not found.');
 
-$sql = "SELECT * FROM users WHERE id = ?";
+$sql = "SELECT * FROM Employees WHERE id = ?";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$id]);
 $user = $stmt->fetch(PDO::FETCH_OBJ);
 
-if(!$user) {
-    echo "No user found";
+if(!$employee) {
+    echo "No Employee found";
 } else {
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User Details</title>
+    <title>Employees Details</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <h2>User Details</h2>
+    <h2>Employees Details</h2>
     <div>
-        <p><strong>Name:</strong> <?= htmlspecialchars($user->name, ENT_QUOTES); ?></p>
-        <p><strong>Email:</strong> <?= htmlspecialchars($user->email, ENT_QUOTES); ?></p>
-        <p><strong>Created At:</strong> <?= $user->created_at; ?></p>
+        <p><strong>Name:</strong> <?= htmlspecialchars($employee->name, ENT_QUOTES); ?></p>
+        <p><strong>Email:</strong> <?= htmlspecialchars($employee->email, ENT_QUOTES); ?></p>
+        <p><strong>Created At:</strong> <?= $employee->created_at; ?></p>
     </div>
-    <a href="read.php" class="btn btn-primary">Back to Users List</a>
+    <a href="read.php" class="btn btn-primary">Back to Employee List</a>
 </div>
 </body>
 </html>
