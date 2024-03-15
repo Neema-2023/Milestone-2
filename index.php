@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CST323 HRMS App</title>
+    <title>CST323 HRMS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to CST323 HRMS App</h1>
+    <h1>Welcome to CST323 HRMS</h1>
     <div class="login-form">
         <h2>Class Login</h2>
         <form action="authenticate.php" method="POST">
@@ -26,7 +26,7 @@
     <hr>
     
     <a href="create.php" class="btn btn-primary">Add Employee</a>
-    <a href="read.php" class="btn btn-secondary">View Employees</a>
+    <a href="read.php" class="btn btn-secondary">View Employee</a>
 </div>
 </body>
 </html>
