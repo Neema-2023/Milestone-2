@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cloud Test App</title>
+    <title>CST323 HRMS App</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <h1>Welcome to Cloud Test App</h1>
+    <h1>Welcome to CST323 HRMS App</h1>
     <div class="login-form">
-        <h2>Login</h2>
+        <h2>Class Login</h2>
         <form action="authenticate.php" method="POST">
             <div class="form-group">
                 <label for="email">Email:</label>
@@ -25,8 +25,8 @@
 
     <hr>
     
-    <a href="create.php" class="btn btn-primary">Add User</a>
-    <a href="read.php" class="btn btn-secondary">View Users</a>
+    <a href="create.php" class="btn btn-primary">Add Employee</a>
+    <a href="read.php" class="btn btn-secondary">View Employees</a>
 </div>
 </body>
 </html>
