@@ -25,6 +25,7 @@ if(!$employee) {
     <div>
         <p><strong>Name:</strong> <?= htmlspecialchars($employee->name, ENT_QUOTES); ?></p>
         <p><strong>Email:</strong> <?= htmlspecialchars($employee->email, ENT_QUOTES); ?></p>
+        <p><strong>Department:</strong> <?= htmlspecialchars($employee->ID, ENT_QUOTES); ?></p>
         <p><strong>Created At:</strong> <?= $employee->created_at; ?></p>
     </div>
     <a href="read.php" class="btn btn-primary">Back to Employee List</a>
