@@ -21,6 +21,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
             <th>ID</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Department</th>
             <th>Action</th>
         </tr>
         <?php foreach($employees as $employee): ?>
@@ -28,6 +29,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                 <td><?= $employee->id; ?></td>
                 <td><?= $employee->name; ?></td>
                 <td><?= $employee->email; ?></td>
+                <td><?= $department->id; ?></td>
                 <td>
                     <a href="update.php?id=<?= $employee->id ?>" class="btn btn-info">Edit</a>
                     <a href="delete.php?id=<?= $employee->id ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
