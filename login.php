@@ -18,20 +18,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['username']) && !empty(
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login - Cloud Test App</title>
+    <title>Login - CST323 HRMS App</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <h2>Login</h2>
+    <h2>Class Login</h2>
     <?php if($message != ''): ?>
         <p class="alert alert-danger"><?= $message; ?></p>
     <?php endif; ?>
     <form action="login.php" method="post">
         <div class="form-group">
-            <label for="username">Username:</label>
-            <input type="text" name="username" id="username" class="form-control" required>
+            <label for="employeename">Employeename:</label>
+            <input type="text" name="employeename" id="employeename" class="form-control" required>
         </div>
         <div class="form-group">
             <label for="password">Password:</label>
