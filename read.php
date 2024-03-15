@@ -1,6 +1,6 @@
 <?php
 require 'db.php';
-$sql = 'SELECT * FROM users';
+$sql = 'SELECT * FROM Employees';
 $statement = $pdo->prepare($sql);
 $statement->execute();
 $users = $statement->fetchAll(PDO::FETCH_OBJ);
@@ -9,13 +9,13 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>View Users</title>
+    <title>View Employees</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 <div class="container">
-    <h2>Users</h2>
+    <h2>Employees</h2>
     <table class="table">
         <tr>
             <th>ID</th>
@@ -23,14 +23,14 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
             <th>Email</th>
             <th>Action</th>
         </tr>
-        <?php foreach($users as $user): ?>
+        <?php foreach($employees as $employee): ?>
             <tr>
-                <td><?= $user->id; ?></td>
-                <td><?= $user->name; ?></td>
-                <td><?= $user->email; ?></td>
+                <td><?= $employee->id; ?></td>
+                <td><?= $employee->name; ?></td>
+                <td><?= $employee->email; ?></td>
                 <td>
-                    <a href="update.php?id=<?= $user->id ?>" class="btn btn-info">Edit</a>
-                    <a href="delete.php?id=<?= $user->id ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a href="update.php?id=<?= $employee->id ?>" class="btn btn-info">Edit</a>
+                    <a href="delete.php?id=<?= $employee->id ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
         <?php endforeach; ?>
