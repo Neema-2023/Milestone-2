@@ -31,7 +31,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
         <label for="position">Position:</label>
         <input type="text" id="position" name="position" required><br><br>
         
-        <input type="submit" value="Register">
+        <button type="submit">Register</button>
     </form>
     <p>Already have an account? <a href="login.html">Login here</a>.</p>
 </body>
