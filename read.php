@@ -24,7 +24,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
             <th>Department</th>
             <th>Action</th>
         </tr>
-        <?php foreach($employees as $employee): ?>
+        <?php ($employees as $employee): ?>
             <tr>
                 <td><?= $employee->id; ?></td>
                 <td><?= $employee->name; ?></td>
@@ -35,7 +35,7 @@ $users = $statement->fetchAll(PDO::FETCH_OBJ);
                     <a href="delete.php?id=<?= $employee->id ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
-        <?php endforeach; ?>
+        <?php ?>
     </table>
 </div>
 </body>
