@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../config/bootstrap.php';
-require_once __DIR__ . '/../vendor/autoload.php';
+//require_once __DIR__ . '/../config/bootstrap.php';
+//require_once __DIR__ . '/../vendor/autoload.php';
 $logger = require_once __DIR__ . '/../config/bootstrap.php';
 
 $logger->info('User accessed department.php');
