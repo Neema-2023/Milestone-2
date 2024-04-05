@@ -22,6 +22,7 @@ $trainings = $trainingService->getAllTrainings();
     <meta charset="UTF-8">
     <title>Employee Management - Scheduled Classes</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
     <div class="container mt-3">
