@@ -15,21 +15,38 @@ if ($db->connect_error) {
 
 $trainingService = new TrainingService(new App\Repository\TrainingScheduleRepository($db));
 $trainings = $trainingService->getAllTrainings();
-
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<div class="container mt-3"><h2>Employee Management - Scheduled Classes</h2>
-<a href="home.php" class="btn btn-primary mb-2">Go Home</a>
-<table class="table">
-<thead><tr><th>Employee Name</th><th>Department</th><th>Training Class</th><th>Date</th></tr></thead><tbody>
-
-foreach ($trainings as $training) {
-    <tr>
-            <td>{$training['employeeName']}</td>
-            <td>{$training['department']}</td>
-            <td>{$training['trainingClass']}</td>
-            <td>{$training['trainingDate']}</td>
-          </tr>
-}
-
-</tbody></table></div>
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Management - Scheduled Classes</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Employee Management - Scheduled Classes</h2>
+        <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Department</th>
+                    <th>Training Class</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($trainings as $training): ?>
+                    <tr>
+                        <td><?= htmlspecialchars($training['employeeName']) ?></td>
+                        <td><?= htmlspecialchars($training['department']) ?></td>
+                        <td><?= htmlspecialchars($training['trainingClass']) ?></td>
+                        <td><?= htmlspecialchars($training['trainingDate']) ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
