@@ -9,24 +9,18 @@
 <div class="container">
     <h1>Welcome to CST323 HRMS</h1>
     <div class="login-form">
-        <h2>Class Login</h2>
-        <form action="authenticate.php" method="POST">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" name="email" id="email" class="form-control" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" class="form-control" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-    </div>
+        <h2>Training Schedule</h2>
+       <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
 
-    <hr>
-    
-    <a href="create.php" class="btn btn-primary">Add Employee</a>
-    <a href="read.php" class="btn btn-secondary">View Employee</a>
-</div>
-</body>
-</html>
+<a href="create.php" class="btn btn-primary mb-2">Add New Training</a>
+
+<table class="table"><thead><tr><th>Employee Name</th><th>Training Class</th><th>Date</th><th>Actions</th></tr></thead><tbody>
+
+foreach ($trainings as $training) {
+     "<tr><td>{$training['employeeName']}</td><td>{$training['trainingClass']}</td><td>{$training['trainingDate']}</td>
+          <td><a href='update.php?id={$training['id']}' class='btn btn-warning'>Edit</a>
+          <a href='delete.php?id={$training['id']}' class='btn btn-danger'>Delete</a></td></tr>";
+}
+
+</tbody></table></div>
+?>
