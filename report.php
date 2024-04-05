@@ -20,26 +20,44 @@ try {
 
     $logger->info('Getting all training reports');
     $trainings = $service->getAllTrainings();
-    $logger->info('Got all training reports');
-    
+    $logger->info('Got all training reports successfully');
 } catch (Exception $e) {
-    $logger->info('Error at reports.php');
+    $logger->info('Error at reports.php: ' . $e->getMessage());
     die('Error: ' . $e->getMessage());
 }
-
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<div class="container mt-3"><h2>Training Classes Report</h2>
-<a href="home.php" class="btn btn-primary mb-2">Go Home</a>
-<table class="table"><thead><tr><th>Employee Name</th><th>Department</th><th>Training Class</th><th>Date</th></tr></thead><tbody>
-
-foreach ($trainings as $training) {
-     "<tr>
-            <td>{$training['employeeName']}</td>
-            <td>{$training['department']}</td>
-            <td>{$training['trainingClass']}</td>
-            <td>{$training['trainingDate']}</td>
-          </tr>";
-}
-
-</tbody></table></div>
 ?>
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Training Classes Report</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-3">
+    <h2>Training Classes Report</h2>
+    <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Department</th>
+                <th>Training Class</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($trainings as $training): ?>
+                <tr>
+                    <td><?= htmlspecialchars($training['employeeName']) ?></td>
+                    <td><?= htmlspecialchars($training['department']) ?></td>
+                    <td><?= htmlspecialchars($training['trainingClass']) ?></td>
+                    <td><?= htmlspecialchars($training['trainingDate']) ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
