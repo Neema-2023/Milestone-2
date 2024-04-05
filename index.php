@@ -3,14 +3,8 @@
 <head>
     <title>CST323 HRMS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="container">
-    <h1>Welcome to CST323 HRMS</h1>
-    <div class="login-form">
-        <h2>Training Schedule</h2>
-       <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
+    <div class="container mt-3"><h2>Training Schedule</h2>
+<a href="home.php" class="btn btn-primary mb-2">Go Home</a>
 
 <a href="create.php" class="btn btn-primary mb-2">Add New Training</a>
 
