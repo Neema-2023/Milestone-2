@@ -1,37 +1,38 @@
 <?php
 require 'db.php';
-
-$id = isset($_GET['id']) ? $_GET['id'] : die('ERROR: Employee ID not found.');
-
-$sql = "SELECT * FROM Employees WHERE id = ?";
-$stmt = $pdo->prepare($sql);
-$stmt->execute([$id]);
-$user = $stmt->fetch(PDO::FETCH_OBJ);
-
-if(!$employee) {
-    echo "No Employee found";
-} else {
+$sql = 'SELECT * FROM Employees';
+$statement = $pdo->prepare($sql);
+$statement->execute();
+$users = $statement->fetchAll(PDO::FETCH_OBJ);
 ?>
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Employees Details</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS Registration</title>
 </head>
 <body>
-<div class="container">
-    <h2>Employees Details</h2>
-    <div>
-        <p><strong>Name:</strong> <?= htmlspecialchars($employee->name, ENT_QUOTES); ?></p>
-        <p><strong>Email:</strong> <?= htmlspecialchars($employee->email, ENT_QUOTES); ?></p>
-        <p><strong>Employee:</strong> <?= htmlspecialchars($employee->id, ENT_QUOTES); ?></p>
-        <p><strong>Created At:</strong> <?= $employee->created_at; ?></p>
-    </div>
-    <a href="read.php" class="btn btn-primary">Back to Employee List</a>
-</div>
+    <h2>HRMS Registration</h2>
+    <form action="register.php" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+        
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" required><br><br>
+        
+        <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a>.</p>
 </body>
 </html>
-<?php
-}
-?>
