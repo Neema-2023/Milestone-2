@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CST323 HRMS</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -9,6 +11,7 @@
         <h2>Training Schedule</h2>
         
         <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
+        
         <a href="create.php" class="btn btn-primary mb-2">Add New Training</a>
 
         <table class="table">
