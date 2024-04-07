@@ -12,7 +12,8 @@
         
         <a href="home.php" class="btn btn-primary mb-2">Go Home</a>
         
-        <a href="create.php" class="btn btn-primary mb-2">Add New Training</a>
+        <a href="training/create.php" class="btn btn-primary mb-2">Add New Training</a>
+
 
         <table class="table">
             <thead>
