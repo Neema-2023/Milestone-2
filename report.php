@@ -33,6 +33,29 @@ try {
     <meta charset="UTF-8">
     <title>Training Classes Report</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Change font family */
+            color: #333; /* Change text color */
+        }
+        h2 {
+            color: #007bff; /* Change heading color */
+        }
+        th {
+            background-color: #f8f9fa; /* Change table header background color */
+        }
+        td {
+            font-weight: bold; /* Make table data bold */
+        }
+        .btn-primary {
+            background-color: #28a745; /* Change button background color */
+            border-color: #28a745; /* Change button border color */
+        }
+        .btn-primary:hover {
+            background-color: #218838; /* Change button background color on hover */
+            border-color: #1e7e34; /* Change button border color on hover */
+        }
+    </style>
 </head>
 <body>
 <div class="container mt-3">
@@ -48,6 +71,7 @@ try {
             </tr>
         </thead>
         <tbody>
+            
             <?php foreach ($trainings as $training): ?>
                 <tr>
                     <td><?= htmlspecialchars($training['employeeName']) ?></td>
